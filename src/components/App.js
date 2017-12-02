@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, browserHistory } from 'react-router-dom';
 import Header from './Header';
 import Home from './Home';
 import Resources from './Resources';
@@ -7,7 +7,7 @@ import Resources from './Resources';
 export default class App extends Component {
     render() {
         return (
-            <BrowserRouter>
+            <BrowserRouter history={browserHistory}>
                 <div>
                     <Header />
                     <Switch>
