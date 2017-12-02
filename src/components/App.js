@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, browserHistory } from 'react-router-dom';
 import Header from './Header';
 import Home from './Home';
 import Resources from './Resources';
+import requireAuth from './RequireAuthentication';
 
 export default class App extends Component {
     render() {
@@ -12,7 +13,7 @@ export default class App extends Component {
                     <Header />
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <Route exact path="/resources" component={Resources} />
+                        <Route exact path="/resources" component={requireAuth(Resources)} />
                     </Switch>
                 </div>
             </BrowserRouter>
